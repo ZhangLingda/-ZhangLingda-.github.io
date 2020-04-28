@@ -16,8 +16,13 @@
 
   <!-- 页面元数据 -->
   
-    <title>所有分类 - Lindy&#39;s Blog</title>
+    <title>R初级03--关系运算、逻辑运算 - Lindy&#39;s Blog</title>
   
+    <meta name="keywords" content="R">
+  
+  
+    <meta name="description" content="R的逻辑常量：TRUE和FALSE
+在R中，TRUE和FALSE分别表示逻辑常量真和假，其值分别为1和0">
   
 
   <!-- feed -->
@@ -294,51 +299,231 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      <section class="post-list ">
-        <div class='post-wrapper'>
-          <article id="archive-page" class="post article white-box shadow">
-            <section class="archive">
-              <div class="archive-item archive-year mark">
-                <h2>所有分类</h2>
-              </div>
-              <div class="archive-item archive-post mark all-categories">
-                
-                  
-                    <a class="" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                      <time><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;数据分析</time>
-                      <span class="title">
-                        (7)
-                      </span>
-                    </a>
-                  
-                    <a class=" child" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/">
-                      <time><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;R</time>
-                      <span class="title">
-                        (6)
-                      </span>
-                    </a>
-                  
-                    <a class=" child" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/">
-                      <time><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;python</time>
-                      <span class="title">
-                        (1)
-                      </span>
-                    </a>
-                  
-                
-              </div>
-              <br>
-              
-            </section>
-          </article>
-        </div>
-      </section>
-    
+
   
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/04/dataAnalyse/R/R3/">
+      R初级03--关系运算、逻辑运算
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 27, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>239 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>R的逻辑常量：<code>TRUE和FALSE</code></p>
+<p>在R中，<code>TRUE和FALSE</code>分别表示逻辑常量<code>真和假</code>，其值分别为<code>1和0</code></p>
+<a id="more"></a>
+
+<p><em>在其它语言中，<code>TRUE和FALSE</code>习惯被称为布尔值 (Boolean value)。</em></p>
+<h2 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h2><p>运算符：<code>&gt;，&lt;，&gt;=，&lt;=，== 和 !=</code></p>
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><p><code>&amp;，|，和 !</code>运算符分别表示逻辑<code>与，或和非</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; TRUE &amp; FALSE</span><br><span class="line">[1] FALSE</span><br><span class="line">&gt; TRUE &amp; TRUE</span><br><span class="line">[1] TRUE</span><br><span class="line">&gt; TRUE | FALSE</span><br><span class="line">[1] TRUE</span><br><span class="line">&gt; FALSE | FALSE</span><br><span class="line">[1] FALSE</span><br><span class="line">&gt; !FALSE</span><br><span class="line">[1] TRUE</span><br><span class="line">&gt; !TRUE</span><br><span class="line">[1] FALSE</span><br><span class="line">&gt; (2 &gt; 3) | (7 &gt;= 7)</span><br><span class="line">[1] TRUE</span><br></pre></td></tr></table></figure>
+
+<p>除了上面三个常用的逻辑运算符之外，<code>xor()</code>函数有时也用到，它表示逻辑<code>异或</code>。如果两个值不相同，异或结果为TRUE；如果两个值相同，异或结果则为FALSE</p>
+<p><em>有些人会纳闷，为啥<code>xor(2, 3)</code>结果会为FALSE。那是因为在R中，所有非零值在逻辑运算中都会被当作为TRUE。因此xor(2, 3)等价于<code>xor(TRUE, TRUE)</code>, 再举一些其它例子：</em></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-27T15:50:11+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 27, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/R/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>R</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/04/dataAnalyse/R/R4/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>R初级04--复数</p>
+                <p class='content'>复数是实数的延伸。任一复数都可表达为a+bi，其中a和b都为实数，分别称为复数的实部和虚部；而i为虚数单位，它是-1的一个平方根，即i^2=-1
+
+
+基本运算123456789101112z1 ...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/04/dataAnalyse/R/R2/'>
+                <p class='title'>R初级02--基本算术运算<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>R的一个最简单功能，是它可以充当计算器来用，而且是个超级计算器。
+R中的基本运算包括：算术运算、关系运算、逻辑运算、赋值运算以及其他运算。
+
+这篇博客将介绍R中的算术运算，主要包括：
+
+四则运算...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'R初级03--关系运算、逻辑运算',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -349,6 +534,20 @@
     
     
 
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系运算"><span class="toc-text">关系运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑运算"><span class="toc-text">逻辑运算</span></a></li></ol>
+    </div>
+  </section>
 
 
   
@@ -518,6 +717,33 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4.1.5/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "p7KRIPvx186GI9TlLBTeLoWv-gzGzoHsz",
+    appKey: "5S1iI5TnH84vkJkbNUYFQwWI",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: ''
+  })
+  </script>
 
 
 

@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,10 +18,8 @@
 
   <!-- 页面元数据 -->
   
-    <title>Hello World - Lindy&#39;s Blog</title>
+    <title>Category: R - Lindy&#39;s Blog</title>
   
-  
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trouble...">
   
 
   <!-- feed -->
@@ -296,12 +296,35 @@
     <div class='body-wrapper'>
       
 
+
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
@@ -311,11 +334,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2020/04/20/hello-world/">
-      Hello World
+  <h2 class="title">
+    <a href="/2020/04/dataAnalyse/R/R6/">
+      R初级06--向量
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -325,6 +348,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
 
             
           
@@ -332,14 +363,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Apr 20, 2020</p>
+    <p>发布于：Apr 27, 2020</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -348,16 +374,21 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>73 words</p>
+      <p>3.6k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
+      <p>16 min</p>
     </a>
   </div>
 
+
+            
+          
+            
+              
 
             
           
@@ -370,222 +401,685 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>向量（vector）是R语言最基本的数据类型。向量中的元素必须为同一属性，常见的向量类型有<strong><em>数值型向量、字符型向量和逻辑型向量</em></strong></p>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/04/dataAnalyse/R/R6/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
           
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
+  <h2 class="title">
+    <a href="/2020/04/dataAnalyse/R/R5/">
+      R初级05--取整运算、有效小数、有效数字
+    </a>
+  </h2>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+        <div class='new-meta-box'>
           
-            <div class='article_footer'>
+            
+          
+            
               
-                
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 27, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>625 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>2 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>取整运算：通俗点讲就是将一个小数（浮点数）转化成整数。比如，我们可以将3.42转化为3或者4</p>
+</li>
+<li><p>有效小数：将一个小数近似为小数位特定的小数。比如，将3.1415926转化为两位有效小数，即3.14</p>
+</li>
+<li><p>有效数字：将一个数近似为特定有效位数的数字。比如，将23456保留两位有效数字，即23000</p>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/04/dataAnalyse/R/R5/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/04/dataAnalyse/R/R4/">
+      R初级04--复数
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 27, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>235 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复数是实数的延伸。任一复数都可表达为<code>a+bi</code>，其中a和b都为实数，分别称为复数的实部和虚部；而i为虚数单位，它是-1的一个平方根，即<code>i^2=-1</code></p>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/04/dataAnalyse/R/R4/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/04/dataAnalyse/R/R3/">
+      R初级03--关系运算、逻辑运算
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 27, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>239 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>R的逻辑常量：<code>TRUE和FALSE</code></p>
+<p>在R中，<code>TRUE和FALSE</code>分别表示逻辑常量<code>真和假</code>，其值分别为<code>1和0</code></p>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/04/dataAnalyse/R/R3/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/04/dataAnalyse/R/R2/">
+      R初级02--基本算术运算
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 27, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>746 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>3 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>R的一个最简单功能，是它可以充当计算器来用，而且是个超级计算器。</p>
+<p>R中的基本运算包括：算术运算、关系运算、逻辑运算、赋值运算以及其他运算。</p>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/04/dataAnalyse/R/R2/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/04/dataAnalyse/R/R1/">
+      R初级01--实用第三方包
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 26, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>62 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<p>安装好R和Rstudio之后，使用第三方包前，需要先安装它：</p>
+<ul>
+<li><p>安装用<code>install.packages()</code>函数，比如<code>install.packages(&#39;data.table&#39;)</code></p>
+</li>
+<li><p>加载包用<code>library()</code>函数，比如<code>library(animation)</code></p>
+</li>
+<li><p>用<code>library(help=data.table)</code>来查看<code>data.table</code>包的相关信息</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+
+  
+
+
+    
+  
+
+</div>
+<aside class='l_side'>
+  
   
     
     
 
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
+<section class="widget blogger shadow desktop mobile">
   <div class='content'>
     
-      <blockquote>
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/ZhangLingda/blogImages/blogImg20200422100506.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Lindy</h2>
+        
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
         
           
-            <p>章鱼玲大倾情打造</p>
-
+            <a href="/"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
           
         
-      </blockquote>
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/ZhangLingda/ZhangLingda.github.io"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/my/m/music/playlist?id=168612446"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
     
   </div>
 </section>
 
   
 
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-22T11:02:32+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 22, 2020</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/20/hello-world/&title=Hello World - Lindy's Blog&summary=Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub."
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/04/20/hello-world/&title=Hello World - Lindy's Blog&summary=Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub."
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/20/hello-world/&title=Hello World - Lindy's Blog&summary=Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub."
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </section>
-
-
-        
-        
-      </section>
-    </article>
-  
-
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
-
-
-  
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'Hello World',
-      tools: true
-    }
-  </script>
-
-
-</div>
-<aside class='l_side'>
-  
-  
-
   
     
     
+  
 
-
-  <section class="widget toc-wrapper shadow desktop mobile">
+  <section class="widget category shadow desktop">
     
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
+            id="categoriesE695B0E68DAEE58886E69E90"
+            ><div class='name'>数据分析</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/"
+            id="categoriesE695B0E68DAEE58886E69E90R"
+            ><div class='name'>R</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/"
+            id="categoriesE695B0E68DAEE58886E69E90python"
+            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
     </div>
   </section>
 
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/R/" style="font-size: 24px; color: #555">R</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a>
+    </div>
+  </section>
+
+
+  
 
   
 
@@ -703,7 +1197,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/ZhangLingda/blogImages/blogImgocean.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -754,33 +1248,6 @@
 
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4.1.5/js/valine.js"></script>
-
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var valine = new Valine();
-  valine.init({
-    el: '#valine_container',
-    meta: meta,
-    
-    appId: "p7KRIPvx186GI9TlLBTeLoWv-gzGzoHsz",
-    appKey: "5S1iI5TnH84vkJkbNUYFQwWI",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'monsterid',
-    lang:'zh-cn',
-    visitor: 'false',
-    highlight: 'true',
-    mathJax: ''
-  })
-  </script>
 
 
 

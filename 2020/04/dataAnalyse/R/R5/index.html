@@ -16,8 +16,17 @@
 
   <!-- 页面元数据 -->
   
-    <title>所有分类 - Lindy&#39;s Blog</title>
+    <title>R初级05--取整运算、有效小数、有效数字 - Lindy&#39;s Blog</title>
   
+    <meta name="keywords" content="R">
+  
+  
+    <meta name="description" content="
+取整运算：通俗点讲就是将一个小数（浮点数）转化成整数。比如，我们可以将3.42转化为3或者4
+
+有效小数：将一个小数近似为小数位特定的小数。比如，将3.1415926转化为两位有效小数，即3.14
+
+有效数字：将一个数近似为特定有效位数的数字。比如，将23456保留两位有效数字，即23000">
   
 
   <!-- feed -->
@@ -294,51 +303,257 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      <section class="post-list ">
-        <div class='post-wrapper'>
-          <article id="archive-page" class="post article white-box shadow">
-            <section class="archive">
-              <div class="archive-item archive-year mark">
-                <h2>所有分类</h2>
-              </div>
-              <div class="archive-item archive-post mark all-categories">
-                
-                  
-                    <a class="" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                      <time><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;数据分析</time>
-                      <span class="title">
-                        (7)
-                      </span>
-                    </a>
-                  
-                    <a class=" child" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/">
-                      <time><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;R</time>
-                      <span class="title">
-                        (6)
-                      </span>
-                    </a>
-                  
-                    <a class=" child" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/">
-                      <time><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;python</time>
-                      <span class="title">
-                        (1)
-                      </span>
-                    </a>
-                  
-                
-              </div>
-              <br>
-              
-            </section>
-          </article>
-        </div>
-      </section>
-    
+
   
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/04/dataAnalyse/R/R5/">
+      R初级05--取整运算、有效小数、有效数字
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据分析/R</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 27, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>625 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>2 min</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <ul>
+<li><p>取整运算：通俗点讲就是将一个小数（浮点数）转化成整数。比如，我们可以将3.42转化为3或者4</p>
+</li>
+<li><p>有效小数：将一个小数近似为小数位特定的小数。比如，将3.1415926转化为两位有效小数，即3.14</p>
+</li>
+<li><p>有效数字：将一个数近似为特定有效位数的数字。比如，将23456保留两位有效数字，即23000</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<p>对应的在R中有相应的函数：</p>
+<ul>
+<li><p>取整运算：ceiling()，floor()，trunc()和round()</p>
+</li>
+<li><p>有效小数：round()</p>
+</li>
+<li><p>有效数字：signif()</p>
+</li>
+</ul>
+<h2 id="ceiling-函数"><a href="#ceiling-函数" class="headerlink" title="ceiling()函数"></a>ceiling()函数</h2><p><code>ceiling()</code>函数返回对应数字的“天花板”值，即不小于该数字的最小整数，俗称向上取整。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ceiling(2.8)</span><br><span class="line">[1] 3</span><br><span class="line">ceiling(-1.7)</span><br><span class="line">[1] -1</span><br><span class="line">ceiling(5.0)</span><br><span class="line">[1] 5</span><br></pre></td></tr></table></figure>
+
+<h2 id="floor-函数"><a href="#floor-函数" class="headerlink" title="floor()函数"></a>floor()函数</h2><p><code>floor()</code>函数返回对应数字的“地板”值，即不大于该数字的最大整数，俗称向下取整。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">trunc(-1.7)</span><br><span class="line">[1] -1</span><br><span class="line">trunc(2.8)</span><br><span class="line">[1] 2</span><br><span class="line">trunc(5.0)</span><br><span class="line">[1] 5</span><br><span class="line">trunc(2.8) &#x3D;&#x3D; floor(2.8)</span><br><span class="line">[1] TRUE</span><br><span class="line">trunc(-1.7) &#x3D;&#x3D; ceiling(-1.7)</span><br><span class="line">[1] TRUE</span><br></pre></td></tr></table></figure>
+
+<h2 id="trunc-函数"><a href="#trunc-函数" class="headerlink" title="trunc()函数"></a>trunc()函数</h2><p><code>trunc()</code>函数的特点是“向零取整”。 对于数字a，trunc(a)将返回靠近0那一侧的那个整数，见下图。如果a为正数，<code>trunc(a) == floor(a)</code>；如果a为负数，<code>trunc(a) == ceiling(a)</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">trunc(-1.7)</span><br><span class="line">[1] -1</span><br><span class="line">trunc(2.8)</span><br><span class="line">[1] 2</span><br><span class="line">trunc(5.0)</span><br><span class="line">[1] 5</span><br><span class="line">trunc(2.8) &#x3D;&#x3D; floor(2.8)</span><br><span class="line">[1] TRUE</span><br><span class="line">trunc(-1.7) &#x3D;&#x3D; ceiling(-1.7)</span><br><span class="line">[1] TRUE</span><br></pre></td></tr></table></figure>
+
+<h2 id="round-函数"><a href="#round-函数" class="headerlink" title="round()函数"></a>round()函数</h2><p>R中采用banker准则，即四舍六入五成双准则</p>
+<blockquote>
+<p>“四舍”是指 ≤ 4舍去；<br>“六入”是指 ≥ 6进一位；<br>“五成双”分两种情况：(1)当5后面有数字时，舍5进一位。(2) 当5后面没有数字时，再分两种情况：(i)当5前一位为奇数时，舍5进一位；(ii)当5前一位为偶数时，舍5不进位。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">round(2.3)</span><br><span class="line">[1] 2</span><br><span class="line">round(2.6)</span><br><span class="line">[1] 3</span><br><span class="line">round(2.50001)</span><br><span class="line">[1] 3</span><br><span class="line">round(2.5)</span><br><span class="line">[1] 2</span><br><span class="line">round(3.5)</span><br><span class="line">[1] 4</span><br><span class="line">round(5.0)</span><br><span class="line">[1] 5</span><br></pre></td></tr></table></figure>
+
+<p>其实<code>round()</code>函数的原型是<code>round(x, digits = 0)</code>。其中参数digits设定小数点的位数，默认为<code>0</code>，即小数点后零位(取整)。</p>
+<p>我们来看一下保留一位小数（即digits = 1）的例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">round(3.24, 1)</span><br><span class="line">[1] 3.2</span><br><span class="line">round(3.26, 1)</span><br><span class="line">[1] 3.3</span><br><span class="line">round(3.2500001, 1)</span><br><span class="line">[1] 3.3</span><br><span class="line">round(3.25, 1)</span><br><span class="line">[1] 3.2</span><br><span class="line">round(3.35, 1)</span><br><span class="line">[1] 3.4</span><br></pre></td></tr></table></figure>
+
+<h2 id="signif-函数"><a href="#signif-函数" class="headerlink" title="signif()函数"></a>signif()函数</h2><p><code>signif()</code>是保留有效数字的函数，常用于科学计数，它的原型为<code>signif(x, digits = 6)</code>。其中参数digits设定有效数字的位数，默认为6</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">signif(3.5455562)</span><br><span class="line">[1] 3.54556</span><br><span class="line">signif(35455562)</span><br><span class="line">[1] 35455600</span><br><span class="line">signif(35455562, 7)</span><br><span class="line">[1] 35455560</span><br><span class="line">signif(-35455562, 7)</span><br><span class="line">[1] -35455560</span><br></pre></td></tr></table></figure>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-27T15:50:11+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 27, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/R/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>R</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/04/dataAnalyse/R/R6/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>R初级06--向量</p>
+                <p class='content'>向量（vector）是R语言最基本的数据类型。向量中的元素必须为同一属性，常见的向量类型有数值型向量、字符型向量和逻辑型向量
+
+
+向量的创建在R中，使用 c() 函数创建向量是最常用的方式。比如...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/04/dataAnalyse/R/R4/'>
+                <p class='title'>R初级04--复数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>复数是实数的延伸。任一复数都可表达为a+bi，其中a和b都为实数，分别称为复数的实部和虚部；而i为虚数单位，它是-1的一个平方根，即i^2=-1
+
+
+基本运算123456789101112z1 ...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'R初级05--取整运算、有效小数、有效数字',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -349,6 +564,20 @@
     
     
 
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ceiling-函数"><span class="toc-text">ceiling()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#floor-函数"><span class="toc-text">floor()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trunc-函数"><span class="toc-text">trunc()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#round-函数"><span class="toc-text">round()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signif-函数"><span class="toc-text">signif()函数</span></a></li></ol>
+    </div>
+  </section>
 
 
   
@@ -518,6 +747,33 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4.1.5/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "p7KRIPvx186GI9TlLBTeLoWv-gzGzoHsz",
+    appKey: "5S1iI5TnH84vkJkbNUYFQwWI",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: ''
+  })
+  </script>
 
 
 
