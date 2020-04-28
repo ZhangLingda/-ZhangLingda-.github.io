@@ -4868,8 +4868,8 @@ ul.list-v >li>a.active {
   border-top-right-radius: 8px;
   line-height: 0;
   border-radius: 100%;
-  width: 128px;
-  height: 128px;
+  width: 200px;
+  height: 200px;
   margin-top: 32px;
   margin-bottom: 0.5rem;
 }
