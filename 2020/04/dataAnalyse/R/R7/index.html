@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>Category: python - Lindy&#39;s Blog</title>
+    <title>R初级07--NA、Inf、NaN、NULL 特殊值 - Lindy&#39;s Blog</title>
   
+    <meta name="keywords" content="R">
+  
+  
+    <meta name="description" content="NA：缺失值 ;  Inf：无穷大 ; NaN：非数值 ; NULL：空值">
   
 
   <!-- feed -->
@@ -296,25 +298,12 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -324,11 +313,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/04/dataAnalyse/Python/Python1/">
-      Python初级01--关键字和标识符
+  <h1 class="title">
+    <a href="/2020/04/dataAnalyse/R/R7/">
+      R初级07--NA、Inf、NaN、NULL 特殊值
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -340,9 +329,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/' rel="nofollow">
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据分析/python</p>
+      <p>数据分析/R</p>
     </a>
   </div>
 
@@ -353,9 +342,14 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Apr 26, 2020</p>
+    <p>发布于：Apr 28, 2020</p>
   </a>
 </div>
+
+            
+          
+            
+              
 
             
           
@@ -364,21 +358,16 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>4 words</p>
+      <p>618 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
+      <p>2 min</p>
     </a>
   </div>
 
-
-            
-          
-            
-              
 
             
           
@@ -391,163 +380,210 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>还没开工–</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p><code>NA</code>：<strong>缺失值</strong> ;  <code>Inf</code>：<strong>无穷大</strong> ; <code>NaN</code>：<strong>非数值</strong> ; <code>NULL</code>：<strong>空值</strong></p>
+<a id="more"></a>
 
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
+<h2 id="Inf"><a href="#Inf" class="headerlink" title="Inf"></a>Inf</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 2 &#x2F; 0      ## 正无穷大</span><br><span class="line">[1] Inf</span><br><span class="line">&gt; -2 &#x2F; 0      ## 负无穷大</span><br><span class="line">[1] -Inf</span><br></pre></td></tr></table></figure>
 
-          </div>
+<p><code>Inf</code> 同时也参与运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 2&#x2F;Inf       ## 当分子为有限值、分母无穷大时，结果为 0</span><br><span class="line">[1] 0</span><br><span class="line">&gt; exp(-Inf)      ## 自然数e的负无穷大次幂为0</span><br><span class="line">[1] 0</span><br><span class="line">&gt; (0:3)^Inf       ## 0的穷大次幂为0；1的穷大次幂还为1；大于1的数的无穷大次幂为无穷大</span><br><span class="line">[1]   0   1 Inf Inf</span><br></pre></td></tr></table></figure>
+
+<p>在R中用 <code>is.finite()</code>, <code>is.infinite()</code>来判断是否为无穷大数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; is.finite(2)</span><br><span class="line">[1] TRUE</span><br><span class="line">&gt; is.infinite(2&#x2F;0)</span><br><span class="line">[1] TRUE</span><br></pre></td></tr></table></figure>
+
+<h2 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h2><p>有些运算会导致结果为非数值，在R中用NaN来表示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 0 &#x2F; 0</span><br><span class="line">[1] NaN</span><br><span class="line">&gt; Inf - Inf</span><br><span class="line">[1] NaN</span><br><span class="line">&gt; Inf &#x2F; Inf</span><br><span class="line">[1] NaN</span><br></pre></td></tr></table></figure>
+
+<p>在R中，用 <code>is.nan()</code>来判断是否为非数值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; is.nan(2)</span><br><span class="line">[1] FALSE</span><br><span class="line">&gt; is.nan(NA)     ## 缺失值NA不是非数值</span><br><span class="line">[1] FALSE</span><br><span class="line">&gt; is.nan(0&#x2F;0)</span><br><span class="line">[1] TRUE</span><br></pre></td></tr></table></figure>
+
+<h2 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h2><p><strong>空值</strong>，即没有内容。一般常用在函数参数中，表示该参数没有被赋予任何值。也经常用在初始化变量，表示变量没有任何内容，因此它的长度为0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- NULL</span><br><span class="line">&gt; length(x)</span><br><span class="line">[1] 0</span><br><span class="line">&gt; is.null(x)      ## is.null()函数判断是否为空值</span><br><span class="line">[1] TRUE</span><br></pre></td></tr></table></figure>
+
+<h2 id="NA"><a href="#NA" class="headerlink" title="NA"></a>NA</h2><p><strong>缺失值</strong>(Missing value)，我们将会经常碰到这个值</p>
+<ol>
+<li>判断向量里是否有缺失值，不能用 <code>==</code>:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- c(2, 5, NA, 7, NA, 8)</span><br><span class="line">&gt; x &#x3D;&#x3D; NA</span><br><span class="line">[1] NA NA NA NA NA NA</span><br><span class="line">&gt; is.na(x)    ## 正确姿势</span><br><span class="line">[1] FALSE FALSE  TRUE FALSE  TRUE FALSE</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在R中使用is.na()来判断是否为缺失值</p>
+</blockquote>
+<br>
+
+<ol start="2">
+<li>有时我们想<strong>删除缺失值或想知道有多少个缺失值</strong>，可以通过下面代码来实现:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; x[! is.na(x)]     ## 删除缺失值</span><br><span class="line">[1] 2 5 8</span><br><span class="line">&gt; sum(is.na(x))     ## 缺失值的个数</span><br><span class="line">[1] 2</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<ol start="3">
+<li>对于处理含有缺失值的向量，<strong>很多函数在默认参数下不能工作</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- c(2, 5, NA, 7, NA, 8)</span><br><span class="line">&gt; mean(x)</span><br><span class="line">[1] NA</span><br><span class="line">&gt; max(x)</span><br><span class="line">[1] NA</span><br><span class="line">&gt; mean(x, na.rm&#x3D;TRUE)</span><br><span class="line">[1] 5.5</span><br><span class="line">&gt; max(x, na.rm&#x3D;TRUE)</span><br><span class="line">[1] 8</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>通过设置 <code>na.rm</code> 为 <code>TRUE</code> 来删除缺失值，然后再统计</p>
+</blockquote>
+<br>
+
+<ol start="4">
+<li>有时我们还想知道缺失值NA在哪个位置。此时可以通过 <code>which()</code> 函数来输出位置索引</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- c(2, 5, NA, 7, NA, 8)</span><br><span class="line">&gt; which(is.na(x))    ## 第3和5个元素是缺失值</span><br><span class="line">[1] 3 5</span><br></pre></td></tr></table></figure>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-28T15:05:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 28, 2020</p>
+  </a>
+</div>
+
         
       
-    
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/R/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>R</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/04/dataAnalyse/R/R8/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>R初级07--NA、Inf、NaN、NULL 特殊值</p>
+                <p class='content'></p>
+              </a>
+            
+            
+              <a class='next' href='/2020/04/dataAnalyse/R/R6/'>
+                <p class='title'>R初级06--向量<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>向量（vector）是R语言最基本的数据类型。向量中的元素必须为同一属性，常见的向量类型有数值型向量、字符型向量和逻辑型向量
+
+
+向量的创建在R中，使用 c() 函数创建向量是最常用的方式。比如...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
   
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'R初级07--NA、Inf、NaN、NULL 特殊值',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/ZhangLingda/blogImages/blogImg20200422100506.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Lindy</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:me@xaoxuu.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/ZhangLingda/ZhangLingda.github.io"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/my/m/music/playlist?id=168612446"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
-  
 
-  <section class="widget category shadow desktop">
+
+  <section class="widget toc-wrapper shadow desktop mobile">
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
-            id="categoriesE695B0E68DAEE58886E69E90"
-            ><div class='name'>数据分析</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/R/"
-            id="categoriesE695B0E68DAEE58886E69E90R"
-            ><div class='name'>R</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/" href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/python/"
-            id="categoriesE695B0E68DAEE58886E69E90python"
-            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Inf"><span class="toc-text">Inf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NaN"><span class="toc-text">NaN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NULL"><span class="toc-text">NULL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NA"><span class="toc-text">NA</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/R/" style="font-size: 24px; color: #555">R</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -716,6 +752,33 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4.1.5/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "p7KRIPvx186GI9TlLBTeLoWv-gzGzoHsz",
+    appKey: "5S1iI5TnH84vkJkbNUYFQwWI",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: ''
+  })
+  </script>
 
 
 
