@@ -302,7 +302,7 @@
   
 
   
-    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -657,7 +657,7 @@ Inf1234&gt; 2 &#x2F; 0      ## 正无穷大[1] Inf&gt; -2 &#x2F; ...</p>
 
 
 
-  <article class="post white-box comments shadow">
+  <article class="post white-box reveal comments shadow">
     <section class="article typo">
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
@@ -805,6 +805,18 @@ Inf1234&gt; 2 &#x2F; 0      ## 正无穷大[1] Inf&gt; -2 &#x2F; ...</p>
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
@@ -888,28 +900,55 @@ Inf1234&gt; 2 &#x2F; 0      ## 正无穷大[1] Inf&gt; -2 &#x2F; ...</p>
 
   
     
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4.1.5/js/valine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail'.split(',').filter(function(item){
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
   var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
   valine.init({
     el: '#valine_container',
     meta: meta,
     
     appId: "p7KRIPvx186GI9TlLBTeLoWv-gzGzoHsz",
     appKey: "5S1iI5TnH84vkJkbNUYFQwWI",
-    placeholder: "快来评论吧~",
+    placeholder: "来聊聊吧~",
     pageSize:'10',
     avatar:'monsterid',
     lang:'zh-cn',
-    visitor: 'false',
+    visitor: 'true',
     highlight: 'true',
-    mathJax: ''
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
   })
   </script>
 
@@ -923,7 +962,7 @@ Inf1234&gt; 2 &#x2F; 0      ## 正无穷大[1] Inf&gt; -2 &#x2F; ...</p>
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.4/js/search.js"></script>
 
 
 

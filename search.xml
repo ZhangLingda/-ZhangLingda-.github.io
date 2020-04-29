@@ -5,6 +5,60 @@
     
     <entry>
       <title>R初级08--矩阵</title>
+      <link href="/2020/04/dataAnalyse/R/R10/"/>
+      <url>/2020/04/dataAnalyse/R/R10/</url>
+      
+        <content type="html"><![CDATA[<p>暂停更新\o\</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据分析 </category>
+          
+          <category> R </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>R初级08--矩阵</title>
+      <link href="/2020/04/dataAnalyse/R/R9/"/>
+      <url>/2020/04/dataAnalyse/R/R9/</url>
+      
+        <content type="html"><![CDATA[<p>暂停更新\o\</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据分析 </category>
+          
+          <category> R </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>R初级08--矩阵</title>
       <link href="/2020/04/dataAnalyse/R/R8/"/>
       <url>/2020/04/dataAnalyse/R/R8/</url>
       
@@ -220,11 +274,11 @@
     
     
     <entry>
-      <title>R初级01--实用第三方包</title>
+      <title>R初级01--实用第三方包、如何获取帮助</title>
       <link href="/2020/04/dataAnalyse/R/R1/"/>
       <url>/2020/04/dataAnalyse/R/R1/</url>
       
-        <content type="html"><![CDATA[<a id="more"></a><p>安装好R和Rstudio之后，使用第三方包前，需要先安装它：</p><ul><li><p>安装用<code>install.packages()</code>函数，比如<code>install.packages(&#39;data.table&#39;)</code></p></li><li><p>加载包用<code>library()</code>函数，比如<code>library(animation)</code></p></li><li><p>用<code>library(help=data.table)</code>来查看<code>data.table</code>包的相关信息</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>本章讲解R使用须知</p><a id="more"></a><h2 id="第三方包"><a href="#第三方包" class="headerlink" title="第三方包"></a>第三方包</h2><p>安装好R和Rstudio之后，使用第三方包前，需要先安装它：</p><ul><li><p>安装用<code>install.packages()</code>函数，比如<code>install.packages(&#39;data.table&#39;)</code></p></li><li><p>加载包用<code>library()</code>函数，比如<code>library(animation)</code></p></li><li><p>用<code>library(help=data.table)</code>来查看<code>data.table</code>包的相关信息</p></li></ul><h2 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h2><p>R 的帮助系统非常强大，可以直接使用 <code>?topic</code> 或 <code>help(topic)</code> 来获取 topic 的帮助信息；也可使用 <code>help.search(&quot;topic&quot;)</code> 来搜索帮助系统</p><p>如果你只知道函数的部分名称，那么可以使用 <code>apropos(&quot;tab&quot;)</code> 来搜索得到载入内存所有包含 tab 字段的函数</p><p>如果还没有得到需要的资料，还有<a href="http://finzi.psych.upenn.edu/search.html" target="_blank" rel="noopener">RSiteSearch</a>，等价于在 R 平台上使用 <code>RSiteSearch()</code> 函数。</p>]]></content>
       
       
       <categories>

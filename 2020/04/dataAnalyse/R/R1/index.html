@@ -16,10 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>R初级01--实用第三方包 - Lindy&#39;s Blog</title>
+    <title>R初级01--实用第三方包、如何获取帮助 - Lindy&#39;s Blog</title>
   
     <meta name="keywords" content="R">
   
+  
+    <meta name="description" content="本章讲解R使用须知">
   
 
   <!-- feed -->
@@ -300,7 +302,7 @@
   
 
   
-    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -313,7 +315,7 @@
           
   <h1 class="title">
     <a href="/2020/04/dataAnalyse/R/R1/">
-      R初级01--实用第三方包
+      R初级01--实用第三方包、如何获取帮助
     </a>
   </h1>
 
@@ -356,7 +358,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>62 words</p>
+      <p>194 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -381,9 +383,9 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <a id="more"></a>
-
-<p>安装好R和Rstudio之后，使用第三方包前，需要先安装它：</p>
+          <p>本章讲解R使用须知</p>
+<a id="more"></a>
+<h2 id="第三方包"><a href="#第三方包" class="headerlink" title="第三方包"></a>第三方包</h2><p>安装好R和Rstudio之后，使用第三方包前，需要先安装它：</p>
 <ul>
 <li><p>安装用<code>install.packages()</code>函数，比如<code>install.packages(&#39;data.table&#39;)</code></p>
 </li>
@@ -392,6 +394,9 @@
 <li><p>用<code>library(help=data.table)</code>来查看<code>data.table</code>包的相关信息</p>
 </li>
 </ul>
+<h2 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h2><p>R 的帮助系统非常强大，可以直接使用 <code>?topic</code> 或 <code>help(topic)</code> 来获取 topic 的帮助信息；也可使用 <code>help.search(&quot;topic&quot;)</code> 来搜索帮助系统</p>
+<p>如果你只知道函数的部分名称，那么可以使用 <code>apropos(&quot;tab&quot;)</code> 来搜索得到载入内存所有包含 tab 字段的函数</p>
+<p>如果还没有得到需要的资料，还有<a href="http://finzi.psych.upenn.edu/search.html" target="_blank" rel="noopener">RSiteSearch</a>，等价于在 R 平台上使用 <code>RSiteSearch()</code> 函数。</p>
 
           
             <div class='article_footer'>
@@ -426,10 +431,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-27T15:51:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-29T11:14:55+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 27, 2020</p>
+    <p>更新于：Apr 29, 2020</p>
   </a>
 </div>
 
@@ -479,7 +484,7 @@
 
 
 
-  <article class="post white-box comments shadow">
+  <article class="post white-box reveal comments shadow">
     <section class="article typo">
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
@@ -509,7 +514,7 @@
 
   <script>
     window.subData = {
-      title: 'R初级01--实用第三方包',
+      title: 'R初级01--实用第三方包、如何获取帮助',
       tools: true
     }
   </script>
@@ -524,6 +529,20 @@
     
     
 
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方包"><span class="toc-text">第三方包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取帮助"><span class="toc-text">获取帮助</span></a></li></ol>
+    </div>
+  </section>
 
 
   
@@ -613,6 +632,18 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
 
   
 <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
@@ -696,28 +727,55 @@
 
   
     
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4.1.5/js/valine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail'.split(',').filter(function(item){
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
     return GUEST_INFO.indexOf(item) > -1
   });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
   var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
   valine.init({
     el: '#valine_container',
     meta: meta,
     
     appId: "p7KRIPvx186GI9TlLBTeLoWv-gzGzoHsz",
     appKey: "5S1iI5TnH84vkJkbNUYFQwWI",
-    placeholder: "快来评论吧~",
+    placeholder: "来聊聊吧~",
     pageSize:'10',
     avatar:'monsterid',
     lang:'zh-cn',
-    visitor: 'false',
+    visitor: 'true',
     highlight: 'true',
-    mathJax: ''
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
   })
   </script>
 
@@ -731,7 +789,7 @@
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.4/js/search.js"></script>
 
 
 

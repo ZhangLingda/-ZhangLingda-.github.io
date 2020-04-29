@@ -1410,6 +1410,9 @@ div.tabs ul.nav-tabs li.tab a {
 div.tabs ul.nav-tabs li.tab a:hover {
   color: #555;
 }
+div.tabs ul.nav-tabs li.tab a i {
+  pointer-events: none;
+}
 div.tabs ul.nav-tabs li.tab.active a {
   cursor: default;
   color: #555;
@@ -2080,6 +2083,9 @@ div.fancybox.stretch>p img {
 .l_main #comments #valine_container .vwrap .vheader .vinput:focus {
   border-bottom: 1px solid #2196f3;
 }
+.l_main #comments #valine_container .vwrap .vedit .vicon {
+  height: 22px;
+}
 .l_main #comments #valine_container .vwrap .vemojis,
 .l_main #comments #valine_container .vwrap .vpreview {
   background: #f6f6f6;
@@ -2105,18 +2111,16 @@ div.fancybox.stretch>p img {
 .l_main #comments #valine_container .vwrap .vpreview::-webkit-scrollbar-thumb:hover {
   background: #767676;
 }
+.l_main #comments #valine_container .vwrap .vemojis .vemoji,
+.l_main #comments #valine_container .vwrap .vpreview .vemoji {
+  max-height: 22px;
+}
 .l_main #comments #valine_container .vwrap .vemojis i,
 .l_main #comments #valine_container .vwrap .vpreview i {
   width: auto;
   padding: 8px;
   border-radius: 4px;
   transition: box-shadow 0.2s ease-out, background 0.2s ease-out;
-}
-.l_main #comments #valine_container .vwrap .vemojis i #emoji,
-.l_main #comments #valine_container .vwrap .vpreview i #emoji,
-.l_main #comments #valine_container .vwrap .vemojis i .emoji,
-.l_main #comments #valine_container .vwrap .vpreview i .emoji {
-  background: transparent;
 }
 .l_main #comments #valine_container .vwrap .vemojis i:hover,
 .l_main #comments #valine_container .vwrap .vpreview i:hover {
@@ -2259,14 +2263,17 @@ div.fancybox.stretch>p img {
   border-radius: 0;
   margin-top: -5px;
 }
-.l_main #comments #valine_container .vcopy,
-.l_main #comments #valine_container .vcopy a {
+.l_main #comments #valine_container .vempty {
+  color: rgba(85,85,85,0.65);
+}
+.l_main #comments #valine_container .vpower,
+.l_main #comments #valine_container .vpower a {
   font-size: 0.75rem;
 }
-.l_main #comments #valine_container .vcopy a {
+.l_main #comments #valine_container .vpower a {
   color: #555;
 }
-.l_main #comments #valine_container .vcopy a:hover {
+.l_main #comments #valine_container .vpower a:hover {
   text-decoration: underline;
   color: #ff5722;
 }
@@ -2430,6 +2437,9 @@ div.fancybox.stretch>p img {
 .article span img {
   display: inline;
   margin: auto;
+}
+.article a {
+  word-break: break-word;
 }
 .article h1:first-child,
 .article h2:first-child,
@@ -3728,6 +3738,9 @@ div.hoverbox:hover >div.target {
 .white-box {
   background: #fff;
 }
+.reveal {
+  visibility: hidden;
+}
 #loading-bar-wrapper {
   position: fixed;
   top: 0;
@@ -4034,10 +4047,9 @@ ul.list-v {
   display: none;
   position: absolute;
   background: #fff;
-  box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 0 1px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1);
   margin-top: -6px;
   border-radius: 4px;
-  border: 1px solid #e7e7e7;
   padding: 8px 0;
 }
 ul.list-v >hr {
@@ -4073,7 +4085,7 @@ ul.list-v >li>a {
   -webkit-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   display: block;
-  color: #555;
+  color: #666;
   font-size: 0.875rem;
   font-weight: bold;
   line-height: 33px;
@@ -4289,7 +4301,7 @@ ul.list-v >li>a.active {
 }
 @media screen and (max-width: 500px) {
   .list-v li {
-    max-width: 264px;
+    max-width: 270px;
   }
 }
 .l_main .prev-next {
@@ -5185,7 +5197,7 @@ ul.list-v >li>a.active {
 }
 @media screen and (max-width: 768px) {
   .l_side .toc-wrapper {
-    z-index: 100;
+    z-index: 1001;
     position: fixed;
     max-height: 1000px;
     width: auto;
